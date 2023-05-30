@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/profile.css" type="text/css">
+  <title><%=data[0].user_name%> Profile</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <% if (message.length > 0) { %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% } else { %>
+      <div class="profile">
+        <div class="profile-header">
+          <h3 class="profile-title"><%=data[0].last_name%>, <%=data[0].first_name%></h3>
+          <img src="http://localhost:3000/images/upload_images/<%=data[0].image%>" alt="User Pic" class="profile-pic">
+        </div>
+        <div class="profile-body">
+          <table class="profile-info">
+            <tbody>
+              <tr>
+                <td class="profile-label">Username:</td>
+                <td class="profile-value"><%=data[0].user_name%></td>
+              </tr>
+              <tr>
+                <td class="profile-label">Mobile:</td>
+                <td class="profile-value"><%=data[0].mob_no%></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
